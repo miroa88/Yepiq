@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yepiq - Custom-made dresses and clothing by professional tailor Anahit. Elegant, unique designs crafted with precision and care.">
+    <meta name="keywords" content="custom dresses, tailoring, wedding dress, evening gown, Anahit, Yepiq">
+    <title>Yepiq | Elegant Custom Dressmaking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Yepiq</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="fade-in">Yepiq</h1>
+                <p class="tagline fade-in-delay">Where Elegance Meets Craftsmanship</p>
+                <p class="subtitle fade-in-delay-2">Custom-made dresses and clothing designed to perfection</p>
+                <a href="#contact" class="cta-button fade-in-delay-3">Get Your Custom Piece</a>
+                <div class="discount-badge fade-in-delay-3">10% OFF Your First Order</div>
+            </div>
+            <div class="hero-visual">
+                <div class="mannequin-container">
+                    <svg class="mannequin" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Mannequin head -->
+                        <ellipse cx="100" cy="30" rx="20" ry="25" fill="#FFE5E5" opacity="0.3"/>
+                        <!-- Neck -->
+                        <rect x="92" y="50" width="16" height="20" fill="#FFE5E5" opacity="0.3"/>
+                        <!-- Shoulders -->
+                        <line x1="60" y1="70" x2="140" y2="70" stroke="#D4AF37" stroke-width="3" opacity="0.6"/>
+                        <!-- Torso - elegant dress silhouette -->
+                        <path d="M 70 70 Q 65 150 60 250 Q 60 300 70 350 L 130 350 Q 140 300 140 250 Q 135 150 130 70 Z"
+                              fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.7"/>
+                        <!-- Waist accent -->
+                        <ellipse cx="100" cy="180" rx="35" ry="8" fill="none" stroke="#E6E6FA" stroke-width="2" opacity="0.5"/>
+                        <!-- Flowing dress bottom -->
+                        <path d="M 70 350 Q 50 380 60 400 L 140 400 Q 150 380 130 350"
+                              fill="#FFE5E5" opacity="0.2" stroke="#D4AF37" stroke-width="1"/>
+                        <!-- Decorative details -->
+                        <circle cx="100" cy="100" r="3" fill="#D4AF37" opacity="0.6"/>
+                        <circle cx="100" cy="130" r="3" fill="#D4AF37" opacity="0.6"/>
+                        <circle cx="100" cy="160" r="3" fill="#D4AF37" opacity="0.6"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Meet Anahit</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="150" cy="150" r="140" fill="#FFE5E5" opacity="0.3"/>
+                            <path d="M 100 120 Q 120 100 150 100 Q 180 100 200 120 Q 210 140 200 160 Q 180 180 150 180 Q 120 180 100 160 Q 90 140 100 120 Z"
+                                  fill="#D4AF37" opacity="0.4"/>
+                            <text x="150" y="220" font-family="Cormorant Garamond" font-size="24" fill="#D4AF37" text-anchor="middle">Anahit</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p class="intro">Professional Tailor & Designer</p>
+                    <p>With years of dedication to the art of dressmaking, Anahit brings your vision to life through meticulous craftsmanship and attention to detail. Every piece is thoughtfully designed and expertly tailored to celebrate your unique style and silhouette.</p>
+                    <p>From elegant evening gowns to perfectly fitted everyday wear, each garment is created with passion, precision, and an unwavering commitment to quality.</p>
+                    <div class="signature">— Anahit</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Services & Pricing</h2>
+            <p class="services-intro">All prices are starting points and may vary based on complexity, fabric choice, and design details.</p>
+
+            <div class="pricing-grid">
+                <!-- Dresses -->
+                <div class="pricing-card">
+                    <div class="card-icon">👗</div>
+                    <h3>Dresses</h3>
+                    <ul class="price-list">
+                        <li>
+                            <span class="service-name">Simple Mini Dress</span>
+                            <span class="price">from $200</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Simple Long Dress</span>
+                            <span class="price">from $300</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Cocktail / Semi-Formal</span>
+                            <span class="price">from $500</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Evening / Formal Dress</span>
+                            <span class="price">from $800</span>
+                        </li>
+                        <li class="highlight">
+                            <span class="service-name">Wedding Dress</span>
+                            <span class="price">from $1,000</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skirts -->
+                <div class="pricing-card">
+                    <div class="card-icon">🎀</div>
+                    <h3>Skirts</h3>
+                    <ul class="price-list">
+                        <li>
+                            <span class="service-name">Short Skirt (Simple)</span>
+                            <span class="price">from $100</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Long Skirt (Simple)</span>
+                            <span class="price">from $150</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Pleated / Layered Skirt</span>
+                            <span class="price">from $200</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tops & Blouses -->
+                <div class="pricing-card">
+                    <div class="card-icon">👚</div>
+                    <h3>Tops & Blouses</h3>
+                    <ul class="price-list">
+                        <li>
+                            <span class="service-name">Simple Blouse / Top</span>
+                            <span class="price">from $100</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Detailed Blouse (ruffles, gathers)</span>
+                            <span class="price">from $150</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Corset</span>
+                            <span class="price">from $250</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Shirt</span>
+                            <span class="price">from $200</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Trousers & Pants -->
+                <div class="pricing-card">
+                    <div class="card-icon">👖</div>
+                    <h3>Trousers & Pants</h3>
+                    <ul class="price-list">
+                        <li>
+                            <span class="service-name">Plain Trousers / Pants</span>
+                            <span class="price">from $200</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Lined Trousers (with details)</span>
+                            <span class="price">from $300</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Plain Shorts</span>
+                            <span class="price">from $150</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Detailed Shorts</span>
+                            <span class="price">from $200</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Jackets & Coats -->
+                <div class="pricing-card">
+                    <div class="card-icon">🧥</div>
+                    <h3>Jackets & Coats</h3>
+                    <ul class="price-list">
+                        <li>
+                            <span class="service-name">Simple Jacket / Blazer</span>
+                            <span class="price">from $200</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Lined Jacket / Blazer</span>
+                            <span class="price">from $300</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Simple Coat / Trench</span>
+                            <span class="price">from $400</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Structured Coat / Trench</span>
+                            <span class="price">from $600</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pricing Factors -->
+            <div class="pricing-info">
+                <div class="info-card increase">
+                    <h4>Price Increases Based On:</h4>
+                    <ul>
+                        <li><strong>Complexity:</strong> Multiple seams, zippers, drapery, asymmetry, decorative work</li>
+                        <li><strong>Fabric Difficulty:</strong> Silk, chiffon, slippery or stretchy materials require extra care</li>
+                        <li><strong>Rush Orders:</strong> Fast turnaround for urgent requests</li>
+                        <li><strong>Fittings:</strong> Multiple fitting sessions and alterations</li>
+                    </ul>
+                </div>
+                <div class="info-card decrease">
+                    <h4>Special Discounts:</h4>
+                    <ul>
+                        <li><strong>First Order:</strong> 10% discount for new clients</li>
+                        <li><strong>Volume Orders:</strong> 10-20% discount for multiple garments</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-intro">Ready to create your dream garment? Let's bring your vision to life.</p>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:7473557146" class="contact-link">747 355 7146</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:info@yepiq.com" class="contact-link">info@yepiq.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div>
+                            <h4>Website</h4>
+                            <span class="contact-link">www.yepiq.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="qr-section">
+                    <div class="qr-container">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAYAAAB5fY51AAAK8ElEQVR4Xu3dwY4bxxWA0YdJ4iSAk/3s/U73kp8gBwgQII5lqkuPqKY4d5YChF9Xd/Wt6hnNbNu2Xf/+j+8++gABAgQI/I/Av//59R9J/I8AAQIEbgL/+vLbr/4eECBAgMDtf1j+IhAgQOAmIFh+EQgQIPBNQLD8QhAgQECw/AYQIEDgm4Bg+YUgQICAYPkNIECAwDcBwfILQYAAAcHyG0CAAAG/4f43wP/P/3nB/+8lfj0JEDhVQLD8YxMgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgAABwfIbQIAAgW8CguUXggABAoLlN4AAAQLfBATLLwQBAgQEy28AAQIEvgkIll8IAgQICJbfAAIECHwTECy/EAQIEBAsvwEECBD4JiBYfiEIECAgWH4DCBAg8E1AsPxCECBAQLD8BhAgQOCbgGD5hSBAgIBg+Q0gQIDANwHB8gtBgACBfwMmxA0tw5gTXgAAAABJRU5ErkJggg==" alt="QR Code" class="qr-code" id="qrCode">
+                        <p class="qr-label">Scan to save contact</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Yepiq</h3>
+                    <p>Crafting elegance, one stitch at a time</p>
+                </div>
+                <div class="footer-contact">
+                    <p>Anahit - Professional Tailor</p>
+                    <p>📞 747 355 7146</p>
+                    <p>✉️ info@yepiq.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Yepiq. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

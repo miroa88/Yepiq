@@ -1,9 +1,22 @@
 // ===================================
 // Mobile Menu Toggle
 // ===================================
+let navSectionLinks = [];
+
+function setActiveNavLink(link) {
+    if (!link) return;
+    navSectionLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
+    navSectionLinks = Array.from(document.querySelectorAll('.nav-menu a:not(.nav-cta-link)'));
+    const consultationModal = document.getElementById('consultationModal');
+    const consultationClose = document.getElementById('consultationClose');
+    const consultationForm = document.getElementById('consultationForm');
+    const consultationTriggers = document.querySelectorAll('[data-open-modal="consultation"]');
 
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', function() {
@@ -22,8 +35,124 @@ document.addEventListener('DOMContentLoaded', function() {
             if (mobileMenuToggle) {
                 mobileMenuToggle.classList.remove('active');
             }
+
+            if (!link.classList.contains('nav-cta-link')) {
+                setActiveNavLink(link);
+            }
         });
     });
+
+    const openConsultationModal = () => {
+        if (!consultationModal) return;
+        consultationModal.classList.add('open');
+        consultationModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        if (navMenu) {
+            navMenu.classList.remove('active');
+        }
+        if (mobileMenuToggle) {
+            mobileMenuToggle.classList.remove('active');
+        }
+        const firstFocusable = consultationModal.querySelector('input, select, textarea');
+        if (firstFocusable) {
+            setTimeout(() => firstFocusable.focus(), 200);
+        }
+    };
+
+    const closeConsultationModal = () => {
+        if (!consultationModal) return;
+        consultationModal.classList.remove('open');
+        consultationModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+    };
+
+    consultationTriggers.forEach(trigger => {
+        trigger.addEventListener('click', event => {
+            event.preventDefault();
+            openConsultationModal();
+        });
+    });
+
+    if (consultationClose) {
+        consultationClose.addEventListener('click', closeConsultationModal);
+    }
+
+    if (consultationModal) {
+        consultationModal.addEventListener('click', event => {
+            if (event.target === consultationModal) {
+                closeConsultationModal();
+            }
+        });
+    }
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && consultationModal && consultationModal.classList.contains('open')) {
+            closeConsultationModal();
+        }
+    });
+
+    if (consultationForm) {
+        consultationForm.addEventListener('submit', event => {
+            event.preventDefault();
+            const formData = new FormData(consultationForm);
+            const name = (formData.get('name') || '').toString().trim();
+            const email = (formData.get('email') || '').toString().trim();
+            const phoneRaw = (formData.get('phone') || '').toString().trim();
+            const phone = phoneRaw || 'Not provided';
+            const service = (formData.get('service') || 'General Consultation').toString();
+            const message = (formData.get('message') || '').toString().trim();
+
+            const subject = encodeURIComponent(`Consultation Request: ${service}`);
+            const bodyLines = [
+                `Name: ${name}`,
+                `Email: ${email}`,
+                `Phone: ${phone}`,
+                `Service Interest: ${service}`,
+                '',
+                'Message:',
+                message
+            ];
+            const mailto = `mailto:yepiq.art@gmail.com?subject=${subject}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+            window.location.href = mailto;
+            consultationForm.reset();
+            setTimeout(closeConsultationModal, 150);
+        });
+    }
+
+    if (navSectionLinks.length) {
+        setActiveNavLink(navSectionLinks[0]);
+    }
+
+    const sectionObserver = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const targetId = entry.target.getAttribute('id');
+                    const activeLink = document.querySelector(`.nav-menu a[href="#${targetId}"]`);
+                    if (activeLink && !activeLink.classList.contains('nav-cta-link')) {
+                        setActiveNavLink(activeLink);
+                    }
+                }
+            });
+        },
+        {
+            rootMargin: '-55% 0px -35% 0px',
+            threshold: 0.1
+        }
+    );
+
+    document.querySelectorAll('section[id]').forEach(section => sectionObserver.observe(section));
+});
+
+// ===================================
+// Dynamic Footer Year (DateTime API)
+// ===================================
+document.addEventListener('DOMContentLoaded', () => {
+    const yearElement = document.getElementById('currentYear');
+    if (yearElement) {
+        const formatter = new Intl.DateTimeFormat(undefined, { year: 'numeric' });
+        yearElement.textContent = formatter.format(new Date());
+    }
 });
 
 // ===================================
@@ -31,6 +160,9 @@ document.addEventListener('DOMContentLoaded', function() {
 // ===================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+        if (this.dataset.openModal) {
+            return;
+        }
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
 
@@ -49,53 +181,49 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ===================================
 // Navbar Scroll Effect
 // ===================================
-let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > 100) {
-        navbar.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.15)';
+function updateNavbarState() {
+    if (!navbar) return;
+    if (window.pageYOffset > 100) {
+        navbar.classList.add('navbar-scrolled');
     } else {
-        navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.08)';
+        navbar.classList.remove('navbar-scrolled');
     }
+}
 
-    lastScroll = currentScroll;
-});
+window.addEventListener('scroll', updateNavbarState);
+updateNavbarState();
 
 // ===================================
-// Intersection Observer for Animations
+// Scroll-triggered Animations
 // ===================================
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+const animatedElements = document.querySelectorAll('[data-animate]');
+if (animatedElements.length) {
+    const animationObserver = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const delay = el.dataset.animateDelay || '0s';
+                    el.style.transitionDelay = delay;
+                    el.classList.add('is-visible');
+                    animationObserver.unobserve(el);
+                }
+            });
+        },
+        {
+            threshold: 0.2,
+            rootMargin: '0px 0px -15% 0px'
         }
+    );
+
+    animatedElements.forEach(el => {
+        const delay = el.dataset.animateDelay || '0s';
+        el.style.transitionDelay = delay;
+        animationObserver.observe(el);
     });
-}, observerOptions);
-
-// Observe all pricing cards
-document.querySelectorAll('.pricing-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(card);
-});
-
-// Observe contact items
-document.querySelectorAll('.contact-item').forEach((item, index) => {
-    item.style.opacity = '0';
-    item.style.transform = 'translateX(-30px)';
-    item.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-    observer.observe(item);
-});
+}
 
 // ===================================
 // Pricing Card Hover Effects
@@ -122,8 +250,8 @@ function generateQRCode() {
 VERSION:3.0
 FN:Anahit - Yepiq Custom Dressmaking
 TEL:7473557146
-EMAIL:info@yepiq.com
-URL:www.yepiq.com
+EMAIL:yepiq.art@gmail.com
+URL:https://yepiq.art
 NOTE:Professional Custom Dressmaking - 10% off first order
 END:VCARD`;
 

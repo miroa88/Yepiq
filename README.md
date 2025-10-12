@@ -40,9 +40,9 @@ ana/
 
 - **Business Name**: Yepiq
 - **Tailor**: Anahit
-- **Phone**: 747 355 7146
-- **Email**: info@yepiq.com
-- **Website**: www.yepiq.com
+- **Phone**: (747) 355-7146
+- **Email**: yepiq.art@gmail.com
+- **Website**: yepiq.art
 
 ## 💰 Special Offers
 

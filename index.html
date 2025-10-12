@@ -21,6 +21,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
+                                                <li class="nav-cta-item"><a href="#consultation" class="nav-cta-link" data-open-modal="consultation">Book Consultation</a></li>
             </ul>
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
                 <span></span>
@@ -37,7 +38,7 @@
                 <h1 class="fade-in">Yepiq</h1>
                 <p class="tagline fade-in-delay">Where Elegance Meets Craftsmanship</p>
                 <p class="subtitle fade-in-delay-2">Custom-made dresses and clothing designed to perfection</p>
-                <a href="#contact" class="cta-button fade-in-delay-3">Get Your Custom Piece</a>
+                <a href="#consultation" class="cta-button fade-in-delay-3" data-open-modal="consultation">Get Your Custom Piece</a>
                 <div class="discount-badge fade-in-delay-3">10% OFF Your First Order</div>
             </div>
             <div class="hero-visual">
@@ -46,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <div class="hero-scroll-indicator">
+        <div class="hero-scroll-indicator" data-animate="fade-up" data-animate-delay="0.1s">
             <span>Scroll to explore</span>
             <div class="scroll-arrow">↓</div>
         </div>
@@ -55,14 +56,14 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">Meet Anahit</h2>
+            <h2 class="section-title" data-animate="fade-up">Meet Anahit</h2>
             <div class="about-content">
-                <div class="about-image">
+                <div class="about-image" data-animate="fade-right" data-animate-delay="0.1s">
                     <div class="image-placeholder">
                         <img src="assets/anahit.png" alt="Anahit, professional tailor" class="about-photo fade-in-delay">
                     </div>
                 </div>
-                <div class="about-text">
+                <div class="about-text" data-animate="fade-left" data-animate-delay="0.2s">
                     <p class="intro">Professional Tailor & Designer</p>
                     <p>With years of dedication to the art of dressmaking, Anahit brings your vision to life through meticulous craftsmanship and attention to detail. Every piece is thoughtfully designed and expertly tailored to celebrate your unique style and silhouette.</p>
                     <p>From elegant evening gowns to perfectly fitted everyday wear, each garment is created with passion, precision, and an unwavering commitment to quality.</p>
@@ -75,13 +76,12 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Services & Pricing</h2>
-            <p class="services-intro">All prices are starting points and may vary based on complexity, fabric choice, and design details.</p>
+            <h2 class="section-title" data-animate="fade-up">Services & Pricing</h2>
+            <p class="services-intro" data-animate="fade-up" data-animate-delay="0.1s">All prices are starting points and may vary based on complexity, fabric choice, and design details.</p>
 
             <div class="pricing-grid">
                 <!-- Dresses -->
-                <div class="pricing-card">
-                    <div class="card-icon">👗</div>
+                <div class="pricing-card" data-animate="zoom-in" data-animate-delay="0.05s">
                     <h3>Dresses</h3>
                     <ul class="price-list">
                         <li>
@@ -108,8 +108,7 @@
                 </div>
 
                 <!-- Skirts -->
-                <div class="pricing-card">
-                    <div class="card-icon">🎀</div>
+                <div class="pricing-card" data-animate="zoom-in" data-animate-delay="0.15s">
                     <h3>Skirts</h3>
                     <ul class="price-list">
                         <li>
@@ -128,8 +127,7 @@
                 </div>
 
                 <!-- Tops & Blouses -->
-                <div class="pricing-card">
-                    <div class="card-icon">👚</div>
+                <div class="pricing-card" data-animate="zoom-in" data-animate-delay="0.25s">
                     <h3>Tops & Blouses</h3>
                     <ul class="price-list">
                         <li>
@@ -152,8 +150,7 @@
                 </div>
 
                 <!-- Trousers & Pants -->
-                <div class="pricing-card">
-                    <div class="card-icon">👖</div>
+                <div class="pricing-card" data-animate="zoom-in" data-animate-delay="0.35s">
                     <h3>Trousers & Pants</h3>
                     <ul class="price-list">
                         <li>
@@ -176,8 +173,7 @@
                 </div>
 
                 <!-- Jackets & Coats -->
-                <div class="pricing-card">
-                    <div class="card-icon">🧥</div>
+                <div class="pricing-card" data-animate="zoom-in" data-animate-delay="0.45s">
                     <h3>Jackets & Coats</h3>
                     <ul class="price-list">
                         <li>
@@ -202,7 +198,7 @@
 
             <!-- Pricing Factors -->
             <div class="pricing-info">
-                <div class="info-card increase">
+                <div class="info-card increase" data-animate="fade-up">
                     <h4>Price Increases Based On:</h4>
                     <ul>
                         <li><strong>Complexity:</strong> Multiple seams, zippers, drapery, asymmetry, decorative work</li>
@@ -211,7 +207,7 @@
                         <li><strong>Fittings:</strong> Multiple fitting sessions and alterations</li>
                     </ul>
                 </div>
-                <div class="info-card decrease">
+                <div class="info-card decrease" data-animate="fade-up" data-animate-delay="0.15s">
                     <h4>Special Discounts:</h4>
                     <ul>
                         <li><strong>First Order:</strong> 10% discount for new clients</li>
@@ -225,43 +221,100 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-intro">Ready to create your dream garment? Let's bring your vision to life.</p>
+            <h2 class="section-title" data-animate="fade-up">Get In Touch</h2>
+            <p class="contact-intro" data-animate="fade-up">Ready to create your dream garment? Let's bring your vision to life.</p>
 
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">📞</div>
-                        <div>
+                    <div class="contact-item" data-animate="fade-right">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V21a1 1 0 01-1 1C10.07 22 2 13.93 2 3a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" />
+                            </svg>
+                        </div>
+                        <div class="contact-details">
                             <h4>Phone</h4>
-                            <a href="tel:7473557146" class="contact-link">747 355 7146</a>
+                            <a href="tel:7473557146" class="contact-link">(747) 355-7146</a>
+                            <span class="contact-note">Call to arrange a fitting appointment.</span>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">✉️</div>
-                        <div>
+                    <div class="contact-item" data-animate="fade-up" data-animate-delay="0.1s">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z" />
+                            </svg>
+                        </div>
+                        <div class="contact-details">
                             <h4>Email</h4>
-                            <a href="mailto:info@yepiq.com" class="contact-link">info@yepiq.com</a>
+                            <a href="mailto:yepiq.art@gmail.com" class="contact-link">yepiq.art@gmail.com</a>
+                            <span class="contact-note">Share inspiration or request a bespoke quote.</span>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🌐</div>
-                        <div>
+                    <div class="contact-item" data-animate="fade-left" data-animate-delay="0.2s">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.92 9h-3.65a15.69 15.69 0 00-1.22-5 8.03 8.03 0 014.87 5zM12 4a13.8 13.8 0 011.6 5h-3.2A13.8 13.8 0 0112 4zM4.33 11a8.03 8.03 0 014.87-5 15.69 15.69 0 00-1.22 5H4.33zm3.65 2a15.69 15.69 0 001.22 5 8.03 8.03 0 01-4.87-5h3.65zm4.35 7a13.8 13.8 0 01-1.6-5h3.2A13.8 13.8 0 0112 20zm3.82-2a15.69 15.69 0 001.22-5h3.65a8.03 8.03 0 01-4.87 5z" />
+                            </svg>
+                        </div>
+                        <div class="contact-details">
                             <h4>Website</h4>
-                            <span class="contact-link">www.yepiq.com</span>
+                            <a href="https://yepiq.art" class="contact-link" target="_blank" rel="noopener">yepiq.art</a>
+                            <span class="contact-note">Browse recent gowns, suits, and alteration stories.</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="qr-section">
-                    <div class="qr-container">
-                        <img src="data:image/png;base64,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" alt="QR Code" class="qr-code" id="qrCode">
-                        <p class="qr-label">Scan to save contact</p>
+                    <div class="qr-container" data-animate="zoom-in" data-animate-delay="0.25s">
+                        <h4 class="qr-title">Save Our Details</h4>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6AQMAAACyIsh+AAAABlBMVEX///8AAABVwtN+AAAACXBIWXMAAA7EAAAOxAGVKw4bAAADY0lEQVRogdVZQY6rUAwLYsGSI3ATuBgCql7scROOwJIFIt926NfMapakSNN2Hq70kjp+TjD765rdfTfz1V++WHO1S3dgGW8N7mApA2A0q/Z5a1bgRgLemw1Hjy82xaxLAuh83Wu3vr0IHrBzG3CvdnznzATAi/LaHT1zXBBYvWUDGO9cJhz5cFSgSCYA+TB2xrfaD2t9awoDs5+EeRigyhq7Zt0n8BXB4GVomP2fpfcwIK6OBW/zxijcFMDv61kAokDlI8c27/OvfSuiJAD8Rd2TG8ewcwFRQLakBykAseh+maqJQgrSOopKp0AOAO+1b6rmZfUmIW2YeFQWyysHAHwdoJpSJZR/jwUv+A9H0tWeSQD4+XvcYV5b8bXeUFuVvzfle0kBQEpD4ckNVpOTxQzM+ltpUwAK+UDazk43Qo0iFcSTJADxgXem9uyQY+R7OJj2owov9w0AXH17fiyKYvUiH8X1EN3HASAJ2YHf4uWnSSSaMAHyV0sOANSV9hMxRKqdNUeuKKIkAMo+jn0QgfpALfNicXSlAZjJKmPfC30e3SkBEDFKRpcDIKt8krkvkpafvXiR+DoFLQMAVqSEwa9kp9q7S5p1JtCyJgDIMdPxfWwzd87Tn+t1FgA5ii0P/kK1IwrqElWAUcTBmgJADtDxsag8jv2LTuXjBp8HqOl4Q9rjNCIf2IIgGL/dYAqAVP1gqtV0LKFRjE58SAIo0Ciapv965XeDLCHNAMDiAHKahL6TO2WXFJ6v3iwFgEcPd45QaEQuHp5qlvygd84BuH93NSCopjUk/zZx87cAokWmiGlW4nuMFfkbVXsWgDoUp0iw9GhFafxWHFeclVkOgOYMNaPg4A5MITi65nIPSZ4HjEopPejr0/I1RbMSzSWWFADrJFbkgAaLJvWi2dPnHAAORiIKPTboNWIKKsQhlgLgYZqKTTJ+FLEBBYbowuxlAMh5Oic5U9gVXbdFmZMAdMXkmDunN2nKp5mPQ+15wOzarTSqDtssjVpom6VRCQB6dlDDp2jmLeMHO1A40LsbkAyAeFQEtl4m2yyhGqj2/JwJwO1D6GVLPCLqVGWpAEa/bBzajPJRrLg+D0DPWGmTppbDbrjTY5ARsRjcZgCoskbOPSamlw81jvvZMDv65TsAf13/AI+ltIT1b12QAAAAAElFTkSuQmCC" alt="QR Code" class="qr-code" id="qrCode">
+                        <p class="qr-label">Scan to add Yepiq to your contacts instantly.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Consultation Modal -->
+    <div class="modal-overlay" id="consultationModal" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="consultationTitle">
+            <button type="button" class="modal-close" id="consultationClose" aria-label="Close consultation form">&times;</button>
+            <h3 class="modal-title" id="consultationTitle">Book a Consultation</h3>
+            <p class="modal-subtitle">Share a few details and we’ll follow up to plan your bespoke piece.</p>
+            <form id="consultationForm" class="modal-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="consultationName">Full Name</label>
+                        <input type="text" id="consultationName" name="name" placeholder="Jane Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="consultationEmail">Email</label>
+                        <input type="email" id="consultationEmail" name="email" placeholder="name@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="consultationPhone">Phone (optional)</label>
+                        <input type="tel" id="consultationPhone" name="phone" placeholder="(747) 355-7146">
+                    </div>
+                    <div class="form-group">
+                        <label for="consultationService">I’m interested in</label>
+                        <select id="consultationService" name="service" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option>Wedding Dress</option>
+                            <option>Evening / Formal Wear</option>
+                            <option>Alterations & Tailoring</option>
+                            <option>Custom Suit</option>
+                            <option>Other Consultation</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="consultationMessage">Tell us about your vision</label>
+                    <textarea id="consultationMessage" name="message" rows="4" placeholder="Share event dates, style inspiration, fabrics, or any specifics you'd love us to know." required></textarea>
+                </div>
+                <button type="submit" class="modal-submit">Send Request</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -273,12 +326,13 @@
                 </div>
                 <div class="footer-contact">
                     <p>Anahit - Professional Tailor</p>
-                    <p>📞 747 355 7146</p>
-                    <p>✉️ info@yepiq.com</p>
+                    <p>Phone: <a href="tel:7473557146" class="contact-link">(747) 355-7146</a></p>
+                    <p>Email: <a href="mailto:yepiq.art@gmail.com" class="contact-link">yepiq.art@gmail.com</a></p>
+                    <p>Web: <a href="https://yepiq.art" class="contact-link" target="_blank" rel="noopener">yepiq.art</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Yepiq. All rights reserved.</p>
+                <p>&copy; <span id="currentYear">2024</span> Yepiq. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -286,3 +340,15 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -728,6 +728,12 @@ h1, h2, h3, h4 {
     font-weight: 600;
 }
 
+.deposit-notice-refund {
+    margin-top: 0.6rem !important;
+    padding-top: 0.6rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
 /* ===================================
    Contact Section
    =================================== */

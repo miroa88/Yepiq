@@ -553,80 +553,80 @@ h1, h2, h3, h4 {
     font-style: italic;
 }
 
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.pricing-card {
-    position: relative;
-    background: linear-gradient(160deg, rgba(255, 229, 229, 0.35), rgba(255, 255, 255, 0.95));
-    padding: 40px 32px;
-    border-radius: 24px;
+.price-menu {
+    column-count: 2;
+    column-gap: 64px;
+    max-width: 920px;
+    margin: 0 auto 60px;
+    padding: 56px 60px;
+    background: linear-gradient(165deg, rgba(255, 229, 229, 0.28), rgba(255, 255, 255, 0.96));
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    border-radius: 28px;
     box-shadow: var(--shadow-md);
-    transition: var(--transition);
-    border: 1px solid rgba(212, 175, 55, 0.15);
-    overflow: hidden;
 }
 
-.pricing-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-    border-color: rgba(212, 175, 55, 0.4);
+.price-category {
+    break-inside: avoid;
+    margin-bottom: 44px;
 }
 
-.pricing-card h3 {
-    font-size: 1.85rem;
+.price-category:last-child {
+    margin-bottom: 0;
+}
+
+.price-category h3 {
+    font-size: 1.6rem;
     text-align: left;
     color: var(--color-accent);
-    letter-spacing: 1px;
-    margin-bottom: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
     text-transform: uppercase;
 }
 
-.pricing-card h3::after {
+.price-category h3::after {
     content: '';
     display: block;
-    width: 48px;
-    height: 3px;
+    width: 40px;
+    height: 2px;
     background: var(--color-accent);
-    margin-top: 16px;
+    margin-top: 12px;
     border-radius: 999px;
 }
 
 .price-list {
     list-style: none;
-    margin-top: 24px;
+    margin-top: 22px;
 }
 
 .price-list li {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 18px;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    display: flex;
+    align-items: baseline;
+    padding: 13px 2px;
 }
 
-.price-list li:last-child {
-    border-bottom: none;
+.price-list li .leader {
+    flex: 1 1 auto;
+    min-width: 20px;
+    margin: 0 12px;
+    border-bottom: 1px dotted rgba(212, 175, 55, 0.5);
+    transform: translateY(-0.3em);
 }
 
 .price-list li.highlight {
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(255, 229, 229, 0.4));
-    padding: 18px 22px;
-    border-radius: 18px;
-    margin: 16px -6px;
-    border: 1px solid rgba(212, 175, 55, 0.18);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 229, 229, 0.45));
+    padding: 14px 18px;
+    border-radius: 14px;
+    margin: 10px 0;
+    border: 1px solid rgba(212, 175, 55, 0.25);
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
-    border-bottom: none;
 }
-
 
 .price-list li.highlight .service-name {
     font-weight: 600;
+}
+
+.price-list li.highlight .leader {
+    border-bottom-color: rgba(212, 175, 55, 0.6);
 }
 
 .service-name {
@@ -634,12 +634,35 @@ h1, h2, h3, h4 {
     font-weight: 500;
 }
 
+.tag {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--color-white);
+    background: var(--color-accent);
+    padding: 3px 8px;
+    border-radius: 999px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
 .price {
     font-weight: 600;
     color: var(--color-accent);
     white-space: nowrap;
     letter-spacing: 0.5px;
-    justify-self: end;
+}
+
+.price .from {
+    font-size: 0.7em;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--color-text-light);
+    letter-spacing: 0;
+    margin-right: 5px;
 }
 
 .pricing-info {
@@ -650,23 +673,39 @@ h1, h2, h3, h4 {
 }
 
 .info-card {
-    background: var(--color-white);
+    background: linear-gradient(165deg, rgba(255, 229, 229, 0.22), rgba(255, 255, 255, 0.97));
     padding: 40px;
     border-radius: 20px;
     box-shadow: var(--shadow-md);
+    border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-.info-card.increase {
-    border-left: 5px solid var(--color-accent);
+.info-card-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
 }
 
-.info-card.decrease {
-    border-left: 5px solid #50C878;
+.info-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(212, 175, 55, 0.06));
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: var(--color-accent);
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1;
 }
 
-.info-card h4 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+.info-card-head h4 {
+    font-size: 1.45rem;
+    margin: 0;
     color: var(--color-text-dark);
 }
 
@@ -675,9 +714,21 @@ h1, h2, h3, h4 {
 }
 
 .info-card li {
-    padding: 10px 0;
+    position: relative;
+    padding: 10px 0 10px 22px;
     color: var(--color-text-light);
-    line-height: 1.8;
+    line-height: 1.75;
+}
+
+.info-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.95em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-accent);
 }
 
 .info-card li strong {
@@ -1226,16 +1277,17 @@ body.modal-open {
         font-size: 2.5rem;
     }
 
-    .pricing-grid {
-        grid-template-columns: 1fr;
+    .price-menu {
+        column-count: 1;
+        padding: 44px 36px;
     }
 
     .price-list li {
-        padding: 14px 0;
+        padding: 14px 2px;
     }
 
     .price-list li.highlight {
-        margin: 14px 0;
+        margin: 12px 0;
     }
 
     section {
@@ -1257,12 +1309,13 @@ body.modal-open {
         font-size: 2rem;
     }
 
-    .pricing-card {
-        padding: 30px 20px;
+    .price-menu {
+        padding: 32px 22px;
+        border-radius: 22px;
     }
 
-    .price-list li {
-        gap: 14px;
+    .price-list li .leader {
+        margin: 0 8px;
     }
 
     .price-list li.highlight {

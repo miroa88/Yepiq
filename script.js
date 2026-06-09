@@ -357,7 +357,7 @@ document.querySelectorAll('.contact-link').forEach(link => {
                 // Show confirmation
                 const originalText = this.textContent;
                 this.textContent = 'Copied!';
-                this.style.color = '#50C878';
+                this.style.color = 'var(--color-accent)';
 
                 setTimeout(() => {
                     this.textContent = originalText;

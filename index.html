@@ -77,10 +77,8 @@
     <section id="services" class="services">
         <div class="container">
             <h2 class="section-title" data-animate="fade-up">Services & Pricing</h2>
-            <p class="services-intro" data-animate="fade-up" data-animate-delay="0.1s">All prices are starting points and may vary based on complexity, fabric choice, and design details.</p>
-            <p class="services-intro fabric-note" data-animate="fade-up" data-animate-delay="0.15s"><strong>Note:</strong> The price doesn't include fabric.</p>
 
-            <div class="price-menu" data-animate="fade-up" data-animate-delay="0.2s">
+            <div class="price-menu" data-animate="fade-up" data-animate-delay="0.1s">
                 <!-- Dresses -->
                 <div class="price-category">
                     <h3>Dresses</h3>
@@ -171,6 +169,8 @@
                     </ul>
                 </div>
             </div>
+
+            <p class="services-intro fabric-note" data-animate="fade-up"><strong>Note:</strong> The price doesn't include fabric.</p>
 
             <!-- Pricing Factors -->
             <div class="pricing-info">
@@ -278,7 +278,7 @@
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="consultationName">Full Name</label>
-                        <input type="text" id="consultationName" name="name" placeholder="Jane Doe" required>
+                        <input type="text" id="consultationName" name="name" placeholder="Sophia Bennett" required>
                     </div>
                     <div class="form-group">
                         <label for="consultationEmail">Email</label>
@@ -292,11 +292,11 @@
                         <label for="consultationService">I’m interested in</label>
                         <select id="consultationService" name="service" required>
                             <option value="" disabled selected>Select an option</option>
-                            <option>Wedding Dress</option>
-                            <option>Evening / Formal Wear</option>
-                            <option>Alterations & Tailoring</option>
-                            <option>Custom Suit</option>
-                            <option>Other Consultation</option>
+                            <option>Dresses</option>
+                            <option>Blouses &amp; Corset</option>
+                            <option>Jackets &amp; Coats</option>
+                            <option>Skirts</option>
+                            <option>Pants &amp; Shorts</option>
                         </select>
                     </div>
                 </div>
@@ -315,17 +315,30 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3>Yepiq</h3>
-                    <p>Crafting elegance, one stitch at a time</p>
+                    <p class="footer-tagline">Crafting elegance, one stitch at a time.</p>
+                    <p class="footer-by">By Anahit &middot; Professional Tailor</p>
                 </div>
-                <div class="footer-contact">
-                    <p>Anahit - Professional Tailor</p>
-                    <p>Phone: <a href="tel:7473557146" class="contact-link">(747) 355-7146</a></p>
-                    <p>Email: <a href="mailto:yepiq.art@gmail.com" class="contact-link">yepiq.art@gmail.com</a></p>
-                    <p>Web: <a href="https://yepiq.art" class="contact-link" target="_blank" rel="noopener">yepiq.art</a></p>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services &amp; Pricing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li><a href="tel:7473557146">(747) 355-7146</a></li>
+                        <li><a href="mailto:yepiq.art@gmail.com">yepiq.art@gmail.com</a></li>
+                        <li><a href="https://yepiq.art" target="_blank" rel="noopener">yepiq.art</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; <span id="currentYear">2024</span> Yepiq. All rights reserved.</p>
+                <p class="footer-credit">Website by <a href="https://miroabdalian.com" target="_blank" rel="noopener">Miro Abdalian</a></p>
             </div>
         </div>
     </footer>

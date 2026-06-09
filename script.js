@@ -256,7 +256,8 @@ NOTE:Professional Custom Dressmaking - 10% off first order
 END:VCARD`;
 
     // Using a QR code API service
-    const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(vcard)}`;
+    // bgcolor matches the site palette (--color-primary #FFE5E5)
+    const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&bgcolor=255-229-229&data=${encodeURIComponent(vcard)}`;
 
     if (qrCodeElement) {
         qrCodeElement.src = qrApiUrl;

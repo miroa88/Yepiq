@@ -274,11 +274,13 @@ function generateQRCode() {
     // Contact information for QR code
     const vcard = `BEGIN:VCARD
 VERSION:3.0
-FN:Anahit - Yepiq Custom Dressmaking
-TEL:7473557146
+N:;Anahit;;;
+FN:Anahit
+ORG:Yepiq Custom Dressmaking
+TEL:(747) 355-7146
 EMAIL:yepiq.art@gmail.com
 URL:https://yepiq.art
-NOTE:Professional Custom Dressmaking - 10% off first order
+NOTE:Professional Custom Dressmaking
 END:VCARD`;
 
     // Using a QR code API service

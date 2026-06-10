@@ -275,6 +275,11 @@
             <h3 class="modal-title" id="consultationTitle">Book a Consultation</h3>
             <p class="modal-subtitle">Share a few details and we’ll follow up to plan your bespoke piece.</p>
             <form id="consultationForm" class="modal-form">
+                <!-- Web3Forms access key (sends submissions to yepiq.art@gmail.com) -->
+                <input type="hidden" name="access_key" value="b7906dcb-e589-464d-83b2-55340bb7b547">
+                <input type="hidden" name="subject" value="New Consultation Request — Yepiq">
+                <input type="hidden" name="from_name" value="Yepiq Website">
+                <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="consultationName">Full Name</label>
@@ -304,6 +309,7 @@
                     <label for="consultationMessage">Tell us about your vision</label>
                     <textarea id="consultationMessage" name="message" rows="4" placeholder="Share event dates, style inspiration, fabrics, or any specifics you'd love us to know." required></textarea>
                 </div>
+                <p class="modal-status" id="consultationStatus" role="status" aria-live="polite"></p>
                 <button type="submit" class="modal-submit">Send Request</button>
             </form>
         </div>

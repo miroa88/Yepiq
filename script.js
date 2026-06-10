@@ -53,6 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (mobileMenuToggle) {
             mobileMenuToggle.classList.remove('active');
         }
+        const status = document.getElementById('consultationStatus');
+        if (status) {
+            status.textContent = '';
+            status.className = 'modal-status';
+        }
         const firstFocusable = consultationModal.querySelector('input, select, textarea');
         if (firstFocusable) {
             setTimeout(() => firstFocusable.focus(), 200);
@@ -92,30 +97,51 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     if (consultationForm) {
-        consultationForm.addEventListener('submit', event => {
-            event.preventDefault();
-            const formData = new FormData(consultationForm);
-            const name = (formData.get('name') || '').toString().trim();
-            const email = (formData.get('email') || '').toString().trim();
-            const phoneRaw = (formData.get('phone') || '').toString().trim();
-            const phone = phoneRaw || 'Not provided';
-            const service = (formData.get('service') || 'General Consultation').toString();
-            const message = (formData.get('message') || '').toString().trim();
+        const submitBtn = consultationForm.querySelector('.modal-submit');
+        const statusEl = document.getElementById('consultationStatus');
 
-            const subject = encodeURIComponent(`Consultation Request: ${service}`);
-            const bodyLines = [
-                `Name: ${name}`,
-                `Email: ${email}`,
-                `Phone: ${phone}`,
-                `Service Interest: ${service}`,
-                '',
-                'Message:',
-                message
-            ];
-            const mailto = `mailto:yepiq.art@gmail.com?subject=${subject}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
-            window.location.href = mailto;
-            consultationForm.reset();
-            setTimeout(closeConsultationModal, 150);
+        consultationForm.addEventListener('submit', async event => {
+            event.preventDefault();
+
+            const originalBtnText = submitBtn ? submitBtn.textContent : '';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending…';
+            }
+            if (statusEl) {
+                statusEl.textContent = '';
+                statusEl.className = 'modal-status';
+            }
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { Accept: 'application/json' },
+                    body: new FormData(consultationForm)
+                });
+                const data = await response.json();
+
+                if (data.success) {
+                    if (statusEl) {
+                        statusEl.textContent = 'Thank you! Your request has been sent — we’ll be in touch soon.';
+                        statusEl.classList.add('success');
+                    }
+                    consultationForm.reset();
+                    setTimeout(closeConsultationModal, 2500);
+                } else {
+                    throw new Error(data.message || 'Submission failed');
+                }
+            } catch (error) {
+                if (statusEl) {
+                    statusEl.textContent = 'Something went wrong. Please try again, or email yepiq.art@gmail.com directly.';
+                    statusEl.classList.add('error');
+                }
+            } finally {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                }
+            }
         });
     }
 
